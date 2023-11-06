@@ -3,6 +3,12 @@ let details = document.getElementById('add-details')
 
       function myFunction(e){
         e.preventDefault();
-        localStorage.setItem(fname.value,email.value);
+        let myObj = {
+          name:fname.value,
+          email:email.value
+        }
+        let myObj_serial = JSON.stringify(myObj);
+        localStorage.setItem(fname.value,email.value)
+        localStorage.setItem('myObj',myObj_serial)
         
       }
