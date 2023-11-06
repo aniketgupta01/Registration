@@ -6,7 +6,6 @@
     <title>Registration Form</title>
     <style>
       body {
-        background-color: #999999;
         font-family: 'Times New Roman', Times, serif;
         color: black;
       }
@@ -43,6 +42,15 @@
         text-align: center;
         border: solid black 1px;
       }
+      .customer{
+        padding-top: 20px;
+        width: 50%;
+        margin: auto;
+        font-size: 20px;
+      }
+      .customer h3{
+        text-align: center;
+      }
       
     
     </style>
@@ -61,13 +69,16 @@
         <input type="text" name="name" id="fname" /><br />
         <label for="email">Email:</label><br />
         <input type="email" name="email" id="email" /><br />
-        <!-- <label for="number">Phone:</label><br />
-        <input type="tel" name="number" id="number" /><br /> -->
+        <label for="number">Phone:</label><br />
+        <input type="tel" name="number" id="number" /><br />
         <!-- <label for="time">Time for Call:</label><br />
         <input type="date" name="date" id="date" />
         <input type="time" name="time" id="time"  /><br> -->
         <input type="submit" name="call" id="call" value="SUBMIT">
       </form>
+    </div>
+    <div id="customers" class="customer">
+      <h3>Customer Details</h3>
     </div>
     <script src="script.js"></script>
 
