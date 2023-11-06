@@ -10,5 +10,6 @@ let details = document.getElementById('add-details')
         let myObj_serial = JSON.stringify(myObj);
         localStorage.setItem(fname.value,email.value)
         localStorage.setItem('myObj',myObj_serial)
+
         
       }
