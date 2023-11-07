@@ -15,7 +15,25 @@ let customers = document.getElementById('customers');
         let li = document.createElement('li');
         li.appendChild(document.createTextNode(`Name : ${fname.value} Email : ${email.value} Number : ${number.value}`));
 
+        let deleteBtn = document.createElement('button');
+        deleteBtn.className='deletebtn';
+        deleteBtn.id='delete';
+        deleteBtn.textContent='Remove'
+
+        li.appendChild(deleteBtn);
         customers.appendChild(li);
 
         
+      }
+
+      customers.addEventListener('click', deleteItem);
+
+      function deleteItem(e){
+        if(e.target.classList.contains('deletebtn')){
+          let item = e.target.parentElement;
+          customers.removeChild(item);
+
+          localStorage.removeItem(email.value)
+
+        }
       }
