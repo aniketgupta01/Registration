@@ -2,21 +2,27 @@ let nameInput = document.getElementById('fname');
 let emailInput = document.getElementById('email');
 let numberInput = document.getElementById('number');
 let details = document.getElementById('add-details')
-      details.addEventListener('submit',myFunction);
+details.addEventListener('submit',myFunction);
 let customers = document.getElementById('customers');      
 
       function myFunction(e){
         e.preventDefault();
         let myObj = {
-          name:fname.value,
-          email:email.value,
-          number:number.value
+          name:nameInput.value,
+          email:emailInput.value,
+          number:numberInput.value
         }
-        let myObj_serial = JSON.stringify(myObj);
-        localStorage.setItem(email.value,myObj_serial)
-
+        axios.post('https://crudcrud.com/api/bda3a984e7124188b6a66581fb47e0ff/appointmentData',myObj)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((err)=>{
+          console.log(err)
+        });
+        
         let li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${fname.value},${email.value},${number.value}`));
+        li.appendChild(document.createTextNode(`${nameInput.value},${emailInput.value},${numberInput.value}`));
+      
 
         //Edit button
         let editBtn = document.createElement('button');
@@ -34,9 +40,10 @@ let customers = document.getElementById('customers');
         li.appendChild(deleteBtn);
         li.appendChild(editBtn);
         customers.appendChild(li);
-        fname.value=""
-        email.value=""
-        number.value=""
+        nameInput.value=""
+        emailInput.value=""
+        numberInput.value=""
+      
 
         
       }
