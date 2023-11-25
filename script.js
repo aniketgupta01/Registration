@@ -47,21 +47,21 @@ function showonscreen(obj) {
   userList.innerHTML = userList.innerHTML + childHTML;
 }
 function deletefn(userid) {
-//   console.log(userid);
-//   axios
-//     .delete(
-//       `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
-//     )
-//     .then((response) => {
-//       removeuserfromscreen(userid);
-//     })
-//     .catch((err) => console.log(err));
-// }
-// function removeuserfromscreen(userid) {
-//   const childnodedelt = document.getElementById(userid);
-//   if (childnodedelt) {
-//     userList.removeChild(childnodedelt);
-//   }
+  console.log(userid);
+  axios
+    .delete(
+      `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
+    )
+    .then((response) => {
+      removeuserfromscreen(userid);
+    })
+    .catch((err) => console.log(err));
+}
+function removeuserfromscreen(userid) {
+  const childnodedelt = document.getElementById(userid);
+  if (childnodedelt) {
+    userList.removeChild(childnodedelt);
+  }
 }
 function editfn(userid) {
   // axios
