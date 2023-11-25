@@ -64,23 +64,23 @@ function removeuserfromscreen(userid) {
   }
 }
 function editfn(userid) {
-  // axios
-  //   .get(
-  //     `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
-  //   )
-  //   .then((res) => {
-  //     nameInput.value = res.data.name;
-  //     emailInput.value = res.data.email;
-  //     phoneInput.value = res.data.phone;
-  //   })
-  //   .catch((err) => console.log(err));
-  // axios
-  //   .delete(
-  //     `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
-  //   )
-  //   .then((response) => {
-  //     removeuserfromscreen(userid);
-  //   })
-  //   .catch((err) => console.log(err));
-  // removeuserfromscreen(userid);
+  axios
+    .get(
+      `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
+    )
+    .then((res) => {
+      nameInput.value = res.data.name;
+      emailInput.value = res.data.email;
+      phoneInput.value = res.data.phone;
+    })
+    .catch((err) => console.log(err));
+  axios
+    .delete(
+      `https://crudcrud.com/api/1e984d0ffa4944ed8c3374036bb241a2/appointmentdata/${userid}`
+    )
+    .then((response) => {
+      removeuserfromscreen(userid);
+    })
+    .catch((err) => console.log(err));
+  removeuserfromscreen(userid);
 }
